@@ -18,7 +18,6 @@ def reg(request):
         number = request.POST.get('number')
         my_user = User.objects.create_user(username=uname, email=email, password=password)
         my_user.number = number 
-         # Assuming 'number' is a field in your custom user model
         my_user.save()
         return redirect('landing') 
     return render(request, "register.html")
